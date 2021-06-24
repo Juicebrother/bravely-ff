@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>勇闖異世界-變中二吧!</title>
+  <link rel="stylesheet" type="text/css" href="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/f0eddee5ed.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Noto+Sans+:100,300,400,500,700,900&display=swap)
+      *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC' , sans-serif;
+      }
+      .responsive {
+       width: 100%;
+       height: auto;
+      }
+       body{
+        background-color: #1a1a1a;
+      }
+      /*main-header*/
+      .main-header{
+        background-color: #0d0d0d;
+      }
+      .main-header .container{
+        display: flex;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .main-header .logo{
+        width: 100px;
+
+      }
+      .main-header .logo img{
+        width: 100%;
+        vertical-align: middle;
+      }
+      .main-header .main-nav{
+        margin: auto;
+        display: flex;
+      }
+      .main-header .main-nav a{
+        font-size: 30px;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(-4px);
+        transition: .3s; 
+      }
+      .main-header .main-nav a:hover{
+        transform: translateY(-10px);
+        color: #e6b800;
+      }
+      .main-header .main-nav a:after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -5px;
+        height: 0;
+        border-bottom: 1px solid #e6b800;
+        transition: .3s;
+      }
+      .main-header .main-nav a:hover:after{
+        left: 0;
+        right: 0;
+      }
+      .dropbtn {
+        background-color: #0d0d0d;
+        color: #f1f1f1;
+        padding: 40px;
+        font-size: 30px;
+        border: none;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        max-height: 120px;
+        z-index: 0;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #404040;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #595959;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        background-color:#404040; 
+      }
+
+
+
+
+
+      /*多層選項*/
+     .dropbtn-1 {
+        background-color: #0d0d0d;
+        color: #f1f1f1;
+        padding: 40px;
+        font-size: 30px;
+        border: none;
+      }
+
+      .down {
+        position: relative;
+        display: inline-block;
+      }
+
+      .down-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        max-height: 120px;
+        z-index: 0;
+      }
+
+      .down-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #404040;
+      }
+
+      .down-content a:hover {
+        background-color: #595959;
+      }
+
+      .down:hover .down-content {
+        display: block;
+        background-color:#404040; 
+      }
+      
+       /*大標*/
+      .wrap{
+        margin: 100px 0;
+      }
+      .fonts{
+        width: 1200px;
+        margin: auto;
+      }
+      .fonts h1{
+        padding: 150px 0 0;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 40px;
+        color: #fff;
+        display: flex;
+        margin-bottom: .5em;
+        text-align: center;
+      }
+      .fonts h1::before,
+      .fonts h1::after{
+        content: '';
+        display: block;
+        height: 5px;
+        width: 4em;
+        background-color: #fff;
+        margin: auto;
+      }
+      .fonts h1::before{
+        margin-right: .5em;
+      }
+      .fonts h1::after{
+        margin-left: .5em;
+      }
+
+
+
+
+      /*破格*/
+      .break{
+        display: flex;
+        width: 1200px;
+        margin: auto;
+        /*background-color: #fff;*/
+        padding-top: 200px;
+        padding-bottom: 90px;
+      }
+      .break-item{
+        width: 370px;
+        margin: 0 15px;
+        text-align: center;
+        border: 10px solid #aaa;
+        background-color: #000;
+        border-radius: 20px;
+        box-shadow: 10px 20px 50px #aaa;
+      }
+      .break-item h3{
+        color: #fff;
+      }
+      .break-item p{
+        color: #fff;
+      }
+      .break-item .break-icon{
+        width: 150px;
+        height: 150px;
+        background-color: #000;
+        margin: -75px auto 0;
+        font-size: 85px;
+        line-height: 150px;
+        border-radius: 50%;
+        color: #fff;
+        position: relative;
+      }
+      .break-item .break-icon:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-top: 10px solid #aaa;
+        border-right: 10px solid #aaa;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid transparent;
+        left: -10px;
+        top: -10px;
+        border-radius: 50%;
+        transform: rotate(-45deg);
+      }
+      .break-item:hover .fas{
+        animation: ss .2s linear infinite alternate;
+      }
+      .break-item .break-txt{
+        padding: 20px;
+      }
+      .break-txt h3{
+        font-size: 40px;
+      }
+      .break-txt h4{
+        font-size: 20px;
+        color: #fff;
+      }
+      @keyframes ss{
+          0%{transform: rotate(-10deg); }
+        100%{transform: rotate(10deg); }
+      }
+
+
+
+
+      /*按鈕*/
+      .button {
+        padding: 15px 25px;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #000;
+        background-color: #8c8c8c;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #737373;
+      }
+
+      .button:hover {
+        background-color: #ccc;
+      }
+
+      .button:active {
+        background-color: #ccc;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+
+
+
+
+
+
+
+
+      /*footer*/
+      .main-footer{
+        max-width: 1920px;
+        padding: 150px 0 0;
+        background-color: #333333;
+      }
+      .main-footer .container{
+        display: flex;
+        width: 1200px;
+        margin: auto;
+      }
+
+      .footer-item{
+        width: 0;
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+      .footer-item h4{
+        font-size: 24px;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        margin-bottom: .5em;
+        padding-bottom: .5em;
+      }
+      .footer-item nav{
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-item nav a{
+        color: #fff;
+        line-height: 1.4;
+        text-decoration: none;
+        padding: 10px 0;
+      }
+      .footer-item nav a:hover{
+        color: #bfbfbf;
+      }
+      .footer-icon{
+        display: flex;
+        margin: auto;
+      }.footer-icon nav{
+        padding-right: 50px;
+        flex-direction: column;
+      }
+      .footer-icon nav a{
+        padding-left: 50px;
+        color: #fff;
+      }
+      .footer-icon nav a:hover{
+        color: #bfbfbf;
+      }
+
+
+
+      .f-footer{
+        background-color: #333333;
+        box-shadow: 0 0 20px 30px #333333;
+      }
+      .conpyright{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px;
+        background-color: #4d4d4d;
+        color: #ffffff;
+      }
+    </style>
+</head>
+<body>
+
+<!-- header -->
+    <header class="main-header">
+      <div class="container">
+        <a href="./index.html" class="logo">
+          <img src="./img.jpg/IMG_1777.jpg">
+        </a>
+
+        <nav class="main-nav">
+          
+         <a href="./index.html">最新消息</a>
+         <a href="./%E9%81%8A%E6%88%B2%E6%8C%87%E5%BC%95.html">遊戲指引</a> 
+         <div class="dropdown">
+          <a class="dropbtn">故事劇情</a>
+           <div class="dropdown-content">
+               <a href="./%E4%B8%BB%E7%B7%9A%E4%B8%80.html">主線一</a>
+           </div>             
+         </div>
+           <a href="./%E8%A7%92%E8%89%B2%E4%BB%8B%E7%B4%B9.html">角色介紹</a>
+           
+        </nav>     
+      </div>
+    </header>
+    <!-- 封面 -->
+    <img src="./img.jpg/export.jpg" alt="Nature" class="responsive">
+<!-- 中間文章 -->
+    <div class="frame">
+       <div class="warp">
+        <div class="fonts">
+          <h1>變中二吧!</h1>
+          <div class="txt">
+          </div>
+        </div>
+       </div> 
+
+
+
+
+<!-- 破格 -->
+      <div class="break">
+        <div class="break-item">
+          <div class="break-icon">
+            <i class="fas fa-user-cog"></i>
+          </div>
+          <div class="break-txt">
+            <h3>工程師</h3>
+            <h4>工作內容</h4>
+            <p>軟體設計、系統規畫及研發製作</p>
+            <p>專案相關程式技術文件之撰寫和維護</p>
+            <button class="button">點我應徵</button>
+          </div>
+        </div>
+        <div class="break-item">
+          <div class="break-icon">
+            <i class="fas fa-user-edit"></i>
+          </div>
+          <div class="break-txt">
+            <h3>設計師</h3>
+            <h4>工作內容</h4>
+            <p>2D/3D人物場景設定</p>
+            <p>UI至平面行銷美術</p>
+            <button class="button">點我應徵</button>
+          </div>
+        </div>
+        <div class="break-item">
+          <div class="break-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="break-txt">
+            <h3>遊戲企劃</h3>
+            <h4>工作內容</h4>
+            <p>遊戲概念設計、數值資料分析</p>
+            <p>市場趨勢觀察設計</p>
+            <button class="button">點我應徵</button>
+          </div>
+        </div>
+      </div>
+         
+
+    
+    
+      
+
+
+
+<!-- Footer -->
+  <!-- Footer -->
+  <div class="main-footer">
+        <div class="container">
+            <div class="footer-item">
+                <h4>關於我們</h4>
+                <nav>
+                    <a href="./%E5%85%AC%E5%8F%B8%E9%A1%98%E6%99%AF.html"><i class="fas fa-angle-right"></i>
+                      公司的願景</a>
+                    <a href="./%E5%85%AC%E5%8F%B8%E7%B0%A1%E4%BB%8B.html"><i class="fas fa-angle-right"></i>
+                      公司簡介</a>
+                    <a href="./%E8%B3%87%E5%AE%89%E6%94%BF%E7%AD%96%E5%8F%8A%E7%9B%AE%E6%A8%99.html"><i class="fas fa-angle-right"></i>
+                      資安政策及目標</a>
+                      <a href="./%E9%9A%B1%E7%A7%81%E6%A2%9D%E6%AC%BE.html"><i class="fas fa-angle-right"></i>
+                      隱私條款</a>
+                      <a href="./%E7%B6%93%E7%87%9F%E7%90%86%E5%BF%B5.html"><i class="fas fa-angle-right"></i>經營理念</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>最新消息</h4>
+                <nav>
+                    <a href="./index.html"><i class="fas fa-angle-right"></i>
+                      最新消息</a>
+       </nav>  
+            </div>
+            <div class="footer-item">
+                <h4>人力資源</h4>
+                <nav>
+                    <a href="./%E4%B8%AD%E4%BA%8C%E5%A5%BD%E7%94%9F%E6%B4%BB.html"><i class="fas fa-angle-right"></i>
+                      中二好生活</a>
+                    <a href="./%E8%AE%8A%E4%B8%AD%E4%BA%8C%E5%90%A7!.html"><i class="fas fa-angle-right"></i>
+                      變中二吧!</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>聯絡我們</h4>
+                <nav>
+                    <a href="./%E7%B5%A6%E5%AE%85%E5%AE%85%E5%80%91%E7%9A%84%E4%BF%A1.html"><i class="fas fa-angle-right"></i>
+                      給宅宅們的信</a>
+                    <a href="./%E8%81%AF%E7%B5%A1%E8%A1%A8%E5%96%AE.html"><i class="fas fa-angle-right"></i>
+                      聯絡表單</a>
+                </nav>
+            </div>
+        </div>
+  </div>
+            <div class="main-footer"> 
+              <div class="container">
+               <div class="footer-icon">
+                <nav>
+                  <a href="https://instagram.com/bravely__2021?r=nametag">
+                   <i class="fab fa-instagram fa-3x"></i>
+                  </a>
+                  <a href="#"> 
+                   <i class="fab fa-facebook-f fa-3x"></i>
+                  </a>
+                  <a href="#"> 
+                   <i class="fas fa-paper-plane fa-3x"></i>
+                  </a>
+                  <a href="#"> 
+                   <i class="fab fa-youtube fa-3x"></i>
+                  </a>
+                </nav>
+               </div>
+              </div>
+            </div> 
+
+
+            <div class="f-footer">
+               <div class="conpyright"> 
+                 &copy;中二少年 版權所有
+               </div>
+            </div>
+
+<script>
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+</body>
+</html>

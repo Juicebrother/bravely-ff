@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>勇闖異世界-主線一</title>
+  <link rel="stylesheet" type="text/css" href="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/f0eddee5ed.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Noto+Sans+:100,300,400,500,700,900&display=swap)
+      *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC' , sans-serif;
+      }
+      .responsive {
+       width: 100%;
+       height: auto;
+      }
+       body{
+        background-color: #1a1a1a;
+      }
+      /*main-header*/
+      .main-header{
+        background-color: #0d0d0d;
+      }
+      .main-header .container{
+        display: flex;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .main-header .logo{
+        width: 100px;
+
+      }
+      .main-header .logo img{
+        width: 100%;
+        vertical-align: middle;
+      }
+      .main-header .main-nav{
+        margin: auto;
+        display: flex;
+      }
+      .main-header .main-nav a{
+        font-size: 30px;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(-4px);
+        transition: .3s; 
+      }
+      .main-header .main-nav a:hover{
+        transform: translateY(-10px);
+        color: #e6b800;
+      }
+      .main-header .main-nav a:after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: -5px;
+        height: 0;
+        border-bottom: 1px solid #e6b800;
+        transition: .3s;
+      }
+      .main-header .main-nav a:hover:after{
+        left: 0;
+        right: 0;
+      }
+      .dropbtn {
+        background-color: #0d0d0d;
+        color: #f1f1f1;
+        padding: 40px;
+        font-size: 30px;
+        border: none;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        max-height: 120px;
+        z-index: 0;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #404040;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #595959;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        background-color:#404040; 
+      }
+
+
+
+
+
+      /*多層選項*/
+     .dropbtn-1 {
+        background-color: #0d0d0d;
+        color: #f1f1f1;
+        padding: 40px;
+        font-size: 30px;
+        border: none;
+      }
+
+      .down {
+        position: relative;
+        display: inline-block;
+      }
+
+      .down-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        max-height: 120px;
+        z-index: 0;
+      }
+
+      .down-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        background-color: #404040;
+      }
+
+      .down-content a:hover {
+        background-color: #595959;
+      }
+
+      .down:hover .down-content {
+        display: block;
+        background-color:#404040; 
+      }
+      
+       /*大標*/
+      .wrap{
+        margin: 100px 0;
+      }
+      .fonts{
+        width: 1200px;
+        margin: auto;
+      }
+      .fonts h1{
+        padding: 150px 0 0;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 40px;
+        color: #fff;
+        display: flex;
+        margin-bottom: .5em;
+        text-align: center;
+      }
+      .fonts h1::before,
+      .fonts h1::after{
+        content: '';
+        display: block;
+        height: 5px;
+        width: 1em;
+        background-color: #fff;
+        margin: auto;
+      }
+      .fonts h1::before{
+        margin-right: .5em;
+      }
+      .fonts h1::after{
+        margin-left: .5em;
+      }
+      .fonts .txt{
+        padding: 50px 0 170px;
+        flex-shrink: 0;
+        box-sizing: border-box;
+      } 
+      .fonts .txt h2{
+        width: 100%;
+        margin-bottom: 1em;
+        color: #b3b300;
+      }
+      .fonts .txt p{
+        width: 100%;
+        margin-bottom: 1em;
+        color: #fff;
+      }
+
+
+
+      .main-anime{
+        width: 1310px;
+        line-height:100px;
+        margin: auto;
+      }
+
+
+
+
+
+
+
+      /*footer*/
+      .main-footer{
+        max-width: 1920px;
+        padding: 150px 0 0;
+        background-color: #333333;
+      }
+      .main-footer .container{
+        display: flex;
+        width: 1200px;
+        margin: auto;
+      }
+
+      .footer-item{
+        width: 0;
+        flex-grow: 1;
+        margin: 0 20px;
+      }
+      .footer-item h4{
+        font-size: 24px;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+        margin-bottom: .5em;
+        padding-bottom: .5em;
+      }
+      .footer-item nav{
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-item nav a{
+        color: #fff;
+        line-height: 1.4;
+        text-decoration: none;
+        padding: 10px 0;
+      }
+      .footer-item nav a:hover{
+        color: #bfbfbf;
+      }
+      .footer-icon{
+        display: flex;
+        margin: auto;
+      }.footer-icon nav{
+        padding-right: 50px;
+        flex-direction: column;
+      }
+      .footer-icon nav a{
+        padding-left: 50px;
+        color: #fff;
+      }
+      .footer-icon nav a:hover{
+        color: #bfbfbf;
+      }
+
+
+
+      .f-footer{
+        background-color: #333333;
+        box-shadow: 0 0 20px 30px #333333;
+      }
+      .conpyright{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0px;
+        background-color: #4d4d4d;
+        color: #ffffff;
+      }
+    </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .load{
+    padding-left: 540px;
+    display: flex;
+  }
+  .load-txt{
+    font-size: 40px;
+    color: #fff;
+    padding-right: 30px;
+    transform: translateY(-40px);
+  }
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #aaa;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+
+<!-- header -->
+    <header class="main-header">
+      <div class="container">
+        <a href="./index.html" class="logo">
+          <img src="./img.jpg/IMG_1777.jpg">
+        </a>
+
+        <nav class="main-nav">
+          
+         <a href="./index.html">最新消息</a>
+         <a href="./%E9%81%8A%E6%88%B2%E6%8C%87%E5%BC%95.html">遊戲指引</a> 
+         <div class="dropdown">
+          <a class="dropbtn">故事劇情</a>
+           <div class="dropdown-content">
+               <a href="./%E4%B8%BB%E7%B7%9A%E4%B8%80.html">主線一</a>
+           </div>             
+         </div>
+           <a href="./%E8%A7%92%E8%89%B2%E4%BB%8B%E7%B4%B9.html">角色介紹</a>
+           
+        </nav>     
+      </div>
+    </header>
+    <!-- 封面 -->
+    <img src="./img.jpg/export.jpg" alt="Nature" class="responsive">
+<!-- 中間文章 -->
+    <div class="frame">
+       <div class="warp">
+        <div class="fonts">
+          <h1>序</h1>
+          <div class="txt">
+            <p>五千年前，在遙古大陸上一場名為「血災」的戰爭導致種族大滅絕...那如同烏托邦般美好的大陸經過血洗之後淪為人間煉獄，導致所有種族家毀人亡，戰爭所留下來的穢氣也讓人無法靠近，唯有被認可的人之外，然而導致戰爭的爆發、種族的滅絕、煉獄般的大陸的人正是惡名昭彰的魔族統領---薩森連薩。</p>
+            <h1>第一章 再次的相遇</h1>
+            <p>一隻白色的鳥伴隨振翅聲往藍天翱翔去，我的視線也追隨著那隻鳥望向天空，有左側到右側，直到消失在森林中我才移開視線往手中的斧頭看，並小聲說道。</p>
+            <p>&emsp;「今天要趕快做完工作才能好好練劍」</p>
+            <p>說完之後我便開始往樹幹的方向看去，瞄準好位置之後，便將斧頭舉起，然後將身體面向側邊，中心放低，我慢慢地調整著呼吸，一瞬間我將我身體隨著斧頭往前我的中心也從後腳往前放。</p>
+            <p>&emsp;「喀!」</p>
+            <p>斧頭非常扎實的砍入樹幹裡面，發出的聲響彷彿可以響遍整座森林。</p>
+            <p>&emsp;「好欸!可以來練劍了」</p>
+            <p>我高興的說著並將斧頭丟置一旁，迫不及待的想開始練劍。</p>
+            <p>我隨手將掉落在地上的樹枝撿起握在手中，並喃喃自語地說著。</p>
+            <p>&emsp;「這次一定要成功...」</p>
+            <p>說完之後，我將樹枝拋向天空，我馬上架好姿勢，並觀察數量和位置之後</p>
+            <p>&emsp;「劍技--三連斬」</p>
+            <p>我口中喊著，並將右手的劍向後拉往樹枝的位置橫砍過去，接著將劍從左下角斜斬上去，但是...我的氣不夠了，最後一刀拉不回來，整個人摔在地上。</p>
+            <p>&emsp;「啊!好...痛啊...」</p>
+            <p>我邊揉我的屁股邊吶喊著痛。</p>
+            <p>&emsp;「看來我還是不行啊...」</p>
+            <p>我說完之後又重新拿好盾和劍準備再試一次的時候，突然後方有一道紫光照耀整座森林，我反射性地將身體往後拉，將盾架在我面前，警戒著說。</p>
+            <p>&emsp;「後方森林嗎? 那裏是迷霧森林欸...」</p>
+            <p>迷霧森林是被當地人稱為被惡魔玩弄的森林，傳說這座森林在三千年前因為「血災」中逃出來的魔族怪物躲來這裡迷惑人類並殺害，而且整座森林都被穢氣壟罩著後來被女巫們封鎖了。</p>
+            <p>&emsp;「照理來說那裏一定不會有人才對的...該不會是...!」</p>
+            <p>我心裡突然有一個念頭，「剛剛那個是魔族的怪物嗎?」雖然很害怕，但我還是戰戰兢兢往紫光的方向走去。</p>
+            <p>周圍空氣異常的詭異，感覺自己走的每一步都異常的沉重。</p>
+            <p>越靠越近，心跳越跳越快，走到散發紫光的地方後，那裏有一位女孩子躺在地上，我這才鬆了一口氣，仔細一看這個女孩，她有著一頭的紫髮，頭上還有類似貴族使用的頭飾，身材非常纖細，感覺一隻手就可以把她舉起，穿著著小披風，裡面有類似緊身衣的服飾，這種衣服的風格很明顯不是我們村莊的人，我馬上又起了戒心。</p>
+            <p>&emsp;「沒有外人能從這座森林裡走過來，沒有人能從這座森林走過來，何況是一位弱女子。」</p>
+            <p>這是女孩突然驚醒，一臉驚恐地掃視著周圍，馬上女孩就注意到我了，女孩想都沒有想馬上向我喊。</p>
+            <p>&emsp;「救命!」</p>
+            <p>&emsp;「欸?」我一臉茫然地說</p>
+            <p>我看著女孩一臉驚恐的表情後，感覺事情不太單純。</p>
+            <p>正當我要詢問女孩的時候，我便聽到草叢裡有聲音，接著草叢裡走出一隻比我高十公分，身穿獸衣頭上戴著魔物的頭蓋骨，外型很接近哥布林的樣子，手裡握著用獸骨做成的大刀的魔物，毫無疑問牠是上等的魔物。</p>
+            <p>&emsp;「臭小鬼，把那女孩給我，聽話的話我會讓你死痛快一點!」</p>
+            <p>魔物臉上擺著很猥褻的笑容看著我們，並拿著大刀指著我說道。</p>
+            <p>&emsp;「今天也太幸運了吧!居然會遇到魔物，而且是很稀少且危險的上等魔物」</p>
+            <p>我自嘲的說道。</p>
+            <p>聽完我說的話之後，那隻魔物笑得更開心了，變大吼著說</p>
+            <p>&emsp;「快點交出那個女孩!」</p>
+            <p>&emsp;「咿-----」</p>
+            <p>女孩更加驚恐地躲在我身後緊緊抓著我的衣角，我可以感覺到她抖得很厲害，這時我憤怒的說道。</p>
+            <p>&emsp; 「她都說不要了!」</p>
+            <p>&emsp;「少說廢話!小心我把你皮扒了!」</p>
+            <p>魔物開始不耐煩著說著。</p>
+            <p>&emsp;「她都跟我求救了，這事我管定了。」</p>
+            <p>&emsp;「你這小鬼....!」</p>
+            <p>&emsp;「什麼?!」</p>
+            <p>魔物的反應讓我一時難以置信，她連我身後的女孩都不管就著我砍來。</p>
+            <p>&emsp;「危險!」</p>
+            <p>我一把推開女孩，並用盾擋下魔物襲來的大刀。</p>
+            <p>儘管我已經擋下了，但是整隻手因為魔物的攻擊而麻痺了。</p>
+            <p>&emsp;「這就是上級魔物嗎?」</p>
+            <p>接著魔物馬上就展開第二波攻擊，魔物將大刀往上高舉，想要用蠻力摧毀我的盾。</p>
+            <p>我急忙將盾架起，開始防禦牠的攻擊。</p>
+            <p>&emsp;「喝啊---!」</p>
+            <p>&emsp;「咿?」</p>
+            <p>魔物突然將劍抽回並運用身體的重心改變劍的軌道，將刀變成橫砍的方式著我砍來。</p>
+            <p>&emsp;「嘿嘿~」</p>
+            <p>牠看到我很驚愕的表情後，臉上露出邪惡的微笑。</p>
+            <p>我急忙將盾往旁擺，很勉強的擋下這一擊，但是自己也因為衝擊往後退了幾步。當然魔物也不會讓我有喘息的空間，馬上著我衝來。</p>
+            <p>&emsp;「哼哼哼!中計了」</p>
+            <p>我發出笑聲，便說道。</p>
+            <p>&emsp;「什麼?」</p>
+            <p>此時魔物還在驚恐的時候我將架式擺好說著。</p>
+            <p>&emsp;「劍技--三連斬」</p>
+            <p>我將身體往後拉，劍往後方舉起，接著左腳一蹬，瞬間將魔物的距離拉近。</p>
+            <p>魔物進入我的攻擊範圍之後，配合著身體馬上將劍往下揮，魔物也及時擋下這一擊。</p>
+            <p>&emsp;「還沒完!」</p>
+            <p>我滑過牠的劍，抵銷掉牠的力氣後，左方有很大的破綻，我馬上將刀從右下角斜上砍去。</p>
+            <p>&emsp;「啊~!好痛啊!」</p>
+            <p>&emsp;「還有呢!」</p>
+            <p>魔物因為左腹被我砍了一刀而將收中的刀丟下去壓住傷口，我也不放過這個機會，最後一刀我改變了軌道，將刀橫拉至我的後方全力往魔物的頸部砍去。</p>
+            <p>&emsp;「啊批虛----」</p>
+            <p>魔物伴隨著奇怪的叫聲死去，我確認魔物確實死去後，我整個人癱軟在地上。</p>
+            <p>&emsp;「沒事吧?」</p>
+            <p>&emsp;「嗯!沒事!」</p>
+            <p>女孩興奮的說著，臉上還擺出微笑的表情，那驚恐的臉早已退去...</p>
+            <p>&emsp;「我的名字是梅路艾姆，是從卡卡利克村來的，妳呢?」</p>
+            <p>&emsp;「我叫安東尼雅，是從霍爾哈特島上被抓來的公主。」</p>
+            <p>&emsp;「霍爾哈特島?」</p>
+            <p>我一連疑惑的看著安東尼雅。</p>
+            <p>&emsp;「嗯，霍爾哈特島，離這裡步遠的地方有一座島，那裏正是霍爾哈特島。」</p>
+            <p>&emsp;「我還以為我所生活的區域就是全部了，原來外面還有世界啊!」</p>
+            <p>我驚訝的說著。</p>
+            <p>從我以前到現在所知道的世界觀大概就是卡卡利克村加上一部份的森林是人類活動區，從迷霧森林開始向外全都是魔物的區域。</p>
+            <p>&emsp;「這麼說來外面還有人類摟?」</p>
+            <p>&emsp;「其實也不是，外面還有其他種族生存在世界各地。」</p>
+            <p>安東尼雅所說的每一句話對我來說都是在打破我的世界觀，正當我還在驚訝的時候，突然想起一件事情。</p>
+            <p>&emsp;「話說，為什麼妳會被魔物追趕，而且是從迷霧森林穿越來這裡的?」</p>
+            <p>這時少女的表情突然凝重起來說著。</p>
+            <p>&emsp;「我因為身上有著奇怪的印記，在「聖書」中記載的印記相似而被視為被魔物附身的怪物被流放到這座島上，猜來沒多久就被魔物追趕，然後就跑島這裡來了。」</p>
+            <p>&emsp;「奇怪的印記?」</p>
+            <p>&emsp;「這個印記很長的像「聖書」所描述的惡魔很像，我也不希望自己身上也有奇怪的印記啊!我才不是什麼惡魔!」</p>
+            <p>安東尼雅激動的說著，開始默默流下淚水。</p>
+            <p>&emsp;「我...很抱歉問妳這些話」</p>
+            <p>&emsp;「沒事，我其實也想好好抱怨出來的，謝謝你，我現在好多了。」</p>
+            <p>&emsp; 「啊...好」</p>
+            <p>我一臉茫然的回答著。</p>
+            <p>&emsp;「這樣下去也不是辦法...」</p>
+            <p>&emsp;「啊!我的村莊中有一位很厲害的賢者，說不定牠有什麼辦法。」</p>
+            <p>&emsp;「真的嗎?」</p>
+            <p>安東尼雅激動地回道。</p>
+            <p>之後我便帶著安東尼雅回去了村子.....</p>
+          </div>
+        </div>
+        <div class="load">
+          <div class="load-txt">
+            <h2>敬請期待</h2>
+          </div>
+        <div class="loader"></div>
+      </div>
+       </div> 
+         
+
+    
+    
+      
+
+
+
+<!-- Footer -->
+   <div class="main-footer">
+        <div class="container">
+            <div class="footer-item">
+                <h4>關於我們</h4>
+                <nav>
+                    <a href="./%E5%85%AC%E5%8F%B8%E9%A1%98%E6%99%AF.html"><i class="fas fa-angle-right"></i>
+                      公司的願景</a>
+                    <a href="./%E5%85%AC%E5%8F%B8%E7%B0%A1%E4%BB%8B.html"><i class="fas fa-angle-right"></i>
+                      公司簡介</a>
+                    <a href="./%E8%B3%87%E5%AE%89%E6%94%BF%E7%AD%96%E5%8F%8A%E7%9B%AE%E6%A8%99.html"><i class="fas fa-angle-right"></i>
+                      資安政策及目標</a>
+                      <a href="./%E9%9A%B1%E7%A7%81%E6%A2%9D%E6%AC%BE.html"><i class="fas fa-angle-right"></i>
+                      隱私條款</a>
+                      <a href="./%E7%B6%93%E7%87%9F%E7%90%86%E5%BF%B5.html"><i class="fas fa-angle-right"></i>經營理念</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>最新消息</h4>
+                <nav>
+                    <a href="./index.html"><i class="fas fa-angle-right"></i>
+                      最新消息</a>
+       </nav>  
+            </div>
+            <div class="footer-item">
+                <h4>人力資源</h4>
+                <nav>
+                    <a href="./%E4%B8%AD%E4%BA%8C%E5%A5%BD%E7%94%9F%E6%B4%BB.html"><i class="fas fa-angle-right"></i>
+                      中二好生活</a>
+                    <a href="./%E8%AE%8A%E4%B8%AD%E4%BA%8C%E5%90%A7!.html"><i class="fas fa-angle-right"></i>
+                      變中二吧!</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>聯絡我們</h4>
+                <nav>
+                    <a href="./%E7%B5%A6%E5%AE%85%E5%AE%85%E5%80%91%E7%9A%84%E4%BF%A1.html"><i class="fas fa-angle-right"></i>
+                      給宅宅們的信</a>
+                    <a href="./%E8%81%AF%E7%B5%A1%E8%A1%A8%E5%96%AE.html"><i class="fas fa-angle-right"></i>
+                      聯絡表單</a>
+                </nav>
+            </div>
+        </div>
+  </div>
+            <div class="main-footer"> 
+              <div class="container">
+               <div class="footer-icon">
+                <nav>
+                  <a href="https://instagram.com/bravely__2021?r=nametag">
+                   <i class="fab fa-instagram fa-3x"></i>
+                  </a>
+                  <a href="https://youtu.be/vliMJCfchGk"> 
+                   <i class="fab fa-youtube fa-3x"></i>
+                  </a>
+                </nav>
+               </div>
+              </div>
+            </div> 
+
+
+            <div class="f-footer">
+               <div class="conpyright"> 
+                 &copy;中二少年 版權所有
+               </div>
+            </div>
+
+<script>
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+</body>
+</html>
